@@ -1,0 +1,503 @@
+<!--
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Single page web app using Angularjs</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+
+
+
+
+
+<style>
+
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color:black;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color:white;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+ .topnav a:hover {
+                  background-color: #0B4CC5;
+                  color: black;
+                }
+
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+      
+<div >
+            <style>
+                    body{
+                        
+                   
+                        background-image: url("images/newback.jpg");
+                
+                    }
+                    
+body {
+    font-family: "Lato", sans-serif;
+}
+
+                    </style>
+<div>
+        <style>
+                body {margin:0;}
+                
+                .topnav {
+                  overflow: hidden;
+                  background-color: #333;
+                
+                }
+                
+                .topnav a {
+                  float: left;
+                  display: block;
+                  color: #f2f2f2;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  font-size: 17px;
+                }
+                
+                .topnav a:hover {
+                  background-color: #0B4CC5;
+                  color: black;
+                }
+                
+                .active {
+                  background-color: #4C98AF;
+                  color: white;
+                }
+                
+                .topnav .icon {
+                  display: none;
+                }
+                
+                @media screen and (max-width: 600px) {
+                  .topnav a:not(:first-child) {display: none;}
+                  .topnav a.icon {
+                    float: right;
+                    display: block;
+                  }
+                }
+                
+                @media screen and (max-width: 600px) {
+                  .topnav.responsive {position: relative;}
+                  .topnav.responsive .icon {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                  }
+              }
+                </style>
+    <img src="uploads/download.jpg" alt="Mountain View" height="100px" width="200px" margin=0px>
+        <nav class="topnav" id="myTopnav"  role="navigation"  style="padding-left:270px;background-color:#3985B1">
+       <ul class="nav navbar-nav">
+      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
+     <li ><a href="/page/htc">HTC<span ></span></a></li>
+      <li class="active"><a href="/page/oppo">Oppo</a></li>
+      
+      <li><a href="/page/nokia">Nokia</a></li>
+      <li><a href="/page/samsung">Samsung</a></li>
+      <li><a href="/page/qmobile">Qmobile</a></li>
+      <li><a href="/page/huawei">Huawei</a></li>
+
+<button onclick="myFunction()">Click me
+
+      <div class="navbar navbar-static">
+     
+<div class="navbar navbar-static">
+    <div class="navbar-inner">
+        <a href="#" class="brand">Brand</a>
+        <ul role="navigation" class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">Drafts</a></li>
+                    <li><a href="#">Sent Items</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Trash</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav pull-right">
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+        <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </ul>
+</nav>
+</div>
+
+
+<style type="text/css">
+    .form-style-9{
+        max-width: 70%;
+        background: #FAFAFA;
+        padding: 30px;
+        margin: 50px auto;
+        box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+        border: 6px solid #305A72;
+    }
+    .form-style-9 ul{
+        padding:0;
+        margin:0;
+        list-style:none;
+    }
+    .form-style-9 ul li{
+        display: block;
+        margin-bottom: 10px;
+        min-height: 35px;
+    }
+    .form-style-9 ul li  .field-style{
+        box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        padding: 8px;
+        outline: none;
+        border: 1px solid #B0CFE0;
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+    
+    }.form-style-9 ul li  .field-style:focus{
+        box-shadow: 0 0 5px #B0CFE0;
+        border:1px solid #B0CFE0;
+    }
+    .form-style-9 ul li .field-split{
+        width: 49%;
+    }
+    .form-style-9 ul li .field-full{
+        width: 100%;
+    }
+    .form-style-9 ul li input.align-left{
+        float:left;
+    }
+    .form-style-9 ul li input.align-right{
+        float:right;
+    }
+    .form-style-9 ul li textarea{
+        width: 100%;
+        height: 100px;
+    }
+    .form-style-9 ul li input[type="button"], 
+    .form-style-9 ul li input[type="submit"] {
+        -moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+        box-shadow: inset 0px 1px 0px 0px #3985B1;
+        background-color: #216288;
+        border: 1px solid #17445E;
+        display: inline-block;
+        cursor: pointer;
+        color: #FFFFFF;
+        padding: 8px 18px;
+        text-decoration: none;
+        font: 12px Arial, Helvetica, sans-serif;
+    }
+    .form-style-9 ul li input[type="button"]:hover, 
+    .form-style-9 ul li input[type="submit"]:hover {
+        background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+        background-color: #28739E;
+    }
+    </style>
+
+
+
+    
+    <form class="form-style-9" action="/api/oppo/add" enctype="multipart/form-data" method="POST" onSubmit="alert('Successfully add a new event!');" style="width: 70%">
+    <h2 style = "text-align: center;">Form of Oppo Phone</h2>
+    <ul>
+    
+        <input type="text" name="title" class="field-style field-split align-left" placeholder="Title" style="width: 100%"/>
+        <br/><br/>
+        <input type="text" name="brand" class="field-style field-split align-right" placeholder="Brand ...." style="width: 100%"/>
+        <br/><br/>
+    
+    
+   
+        <input type="text" name="Price" class="field-style field-split align-left" placeholder="Price ...."style="width: 100%" />
+        <br/><br/>
+        <textarea class="dataedit" name="description" type="text" id="description" rows="5" cols="121" required placeholder="Description...." style=""></textarea>
+        <input type="text" name="mydate" class="field-style field-split align-right" placeholder="Decription"  style="width: 100%; height: 100px"/>
+        <br/><br/>
+        <input type=file name="userFile"  id="userFile" required="required" style="margin-left:auto;margin-top:auto;margin-bottom:auto;width: 100%;">
+    
+    
+    
+            <input type="text" name="myurl" class="field-style field-split align-left" placeholder="Image Url" />
+        <br/><br/>
+    <li>
+    <input type="submit" value="Register" />
+    </li>
+    </ul>
+    </form>
+    </body>
+</html>
+-->
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Single page web app using Angularjs</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+
+<nav>
+  <ul>
+
+
+<nav class="topnav" id="myTopnav"  role="navigation"  style="padding-left:270px;background-color:rgb(105, 25, 125)">
+   
+
+   
+      <li ><a href="/secret">Home<span class="sr-only">(current)</span></a></li>
+     <li ><a href="/page/htc">HTC<span ></span></a></li>
+      <li class="active"><a href="/page/oppo">Oppo</a></li>
+      
+      <li ><a href="/page/nokia">Nokia</a></li>
+      <li><a href="/page/samsung">Samsung</a></li>
+      <li><a href="/page/qmobile">Qmobile</a></li>
+      <li><a href="/page/huawei">Huawei</a></li>
+      
+
+    <li class="parent"><a href="#">Data View</a>
+      <ul class="child">
+        <li><a href="/page/viewnokia">Nokia</a></li>
+        <li><a href="/page/viewoppo">Oppo</a></li>
+        <li><a href="/page/viewhuawei">Huawei</a></li>
+ <li><a href="/page/viewqmobile">Qmobile</a></li> 
+  <li><a href="/page/viewhtc">HTC</a></li>
+   <li><a href="/page/viewsamsung">Samsung</a></li>
+
+
+
+      </ul>
+    </li>
+    <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+ 
+
+ 
+  </ul>
+
+
+ </ul>
+
+  
+</nav>
+<style>
+
+nav {
+    background: #444;
+    width: 100%;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+    nav ul li:hover {
+        background: #03ADDF;
+    }
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+    nav ul li a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+
+
+    nav ul li.parent ul.child {
+    display: none;
+}
+nav ul li.parent:hover ul.child {
+    display: block;
+    position: absolute;
+    top: 40px;
+    background: #03ADDF;
+}
+
+nav ul li.parent ul.child li {
+    width: 9em;
+    padding: 0;
+}
+nav ul li.parent ul.child li:hover {
+    background: #008FBA;
+}
+nav ul li.parent ul.child li a {
+    display: block;
+}
+
+</style>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    margin-top:2%; 
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 60%;
+    margin-top: 2%;
+}
+</style>
+<div class="container">
+  <form action="/api/oppo/add" method="POST" enctype="multipart/form-data">
+  <h2 style="margin-left:30% ">Form of Oppo Phone</h2>
+    <label for="fname">Title</label>
+    <input type="text" id="title" name="title" placeholder="Title..">
+
+    <label for="lname">Brand</label>
+    <input type="text" id="brand" name="brand" placeholder="Brand..">
+
+    <label for="country">Price</label>
+    <input type="text" id="Price" name="Price" placeholder="Price..">
+
+
+    <!--<select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>-->
+
+    <label for="subject">Description</label>
+    <textarea id="description" name="description" placeholder="Write something.." style="height:200px"></textarea>
+
+  <input type=file name="userFile"  id="userFile" required="required" style="margin-left:auto;margin-top:auto;margin-bottom:auto;width: 100%;">
+    
+    
+
+    <input type="submit" value="Submit">
+
+
+  </form>
+</div>
+    </body>
+    </html>
